@@ -1,3 +1,3 @@
-# jira
+# Jira-like
 
 Describe jira here.
