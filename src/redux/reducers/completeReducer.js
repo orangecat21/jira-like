@@ -13,6 +13,18 @@ const initialState = {
 
 const completeReducer = (state = initialState, action) => {
     switch (action.type) {
+        case actionTypes.MOVE_TASK_TO_COMPLETE:
+            return {
+                ...state,
+                tasks: [...state.tasks, action.task]
+            };
+
+        case actionTypes.MOVE_TASK_TO_INSPECTION:
+            return {
+                ...state,
+                tasks: state.tasks.filter(item => item.id !== action.task.id),
+            };
+
         default:
             return state;
     }
