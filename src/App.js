@@ -1,19 +1,40 @@
-import './App.css'
+import React from 'react';
+import {Grid, Paper, Container, makeStyles} from '@material-ui/core';
 
-import React, {Component} from 'react'
+const useStyle = makeStyles(() => ({
+   root: {
+       padding: 20,
+       marginBottom: 10
+   }
+}));
 
-class App extends Component {
-  render() {
-    return <div className="App">
-      <div className="App-heading App-flex">
-        <h2>Welcome to <span className="App-react">React</span></h2>
-      </div>
-      <div className="App-instructions App-flex">
-        <img className="App-logo" src={require('./react.svg')}/>
-        <p>Edit <code>src/App.js</code> and save to hot reload your changes.</p>
-      </div>
-    </div>
-  }
+const App = () => {
+    const classes = useStyle();
+    return (
+        <Container>
+            <Grid container alignItems='center' justify='center' spacing={4}>
+                <Grid item>
+                    <Paper className={classes.root}>CHECK</Paper>
+                    <Paper>CHECK</Paper>
+                </Grid>
+
+                <Grid item>
+                    <Paper>CHECK</Paper>
+                    <Paper>CHECK</Paper>
+                </Grid>
+
+                <Grid item>
+                    <Paper>CHECK</Paper>
+                    <Paper>CHECK</Paper>
+                </Grid>
+
+                <Grid item>
+                    <Paper>CHECK</Paper>
+                    <Paper>CHECK</Paper>
+                </Grid>
+            </Grid>
+        </Container>
+    );
 }
 
-export default App
+export default App;
