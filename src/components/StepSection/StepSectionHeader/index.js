@@ -1,7 +1,7 @@
 import React from 'react';
 
 import {makeStyles, Paper, IconButton} from '@material-ui/core';
-import {FiberManualRecord, Add as AddIcon} from '@material-ui/icons';
+import {FiberManualRecord as Marker, Add as AddIcon} from '@material-ui/icons';
 
 const useStyle = makeStyles({
     root: {
@@ -29,7 +29,7 @@ const StepSectionHeader = ({title, markerColor = 'grey', addButton, addCardHandl
     const classes = useStyle({markerColor});
     return (
         <Paper elevation={0} classes={{root: classes.root}} {...props}>
-            <FiberManualRecord className={classes.marker}/>
+            <Marker className={classes.marker}/>
             {title}
             <IconButton className={classes.button} onClick={addCardHandler}>
                 {addButton && <AddIcon/>}

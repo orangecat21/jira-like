@@ -1,3 +1,3 @@
 import React from 'react';
 
-import {makeStyles, Paper, IconButton} from '@material-ui/core';
+import {makeStyles, Paper} from '@material-ui/core';
