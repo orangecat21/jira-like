@@ -1,20 +1,20 @@
 import React from 'react';
 
 import {makeStyles, Paper} from '@material-ui/core';
+import TaskCard from './TaskCard';
 
 const useStyle = makeStyles({
     root: {
         padding: 10,
-        width: 250,
         backgroundColor: '#F2F4F5',
     },
 });
 
-const TaskList = ({children, ...props}) => {
+const TaskList = ({tasks, ...props}) => {
     const classes = useStyle();
     return (
         <Paper elevation={0} classes={{root: classes.root}} {...props}>
-            {children}
+            {tasks && tasks.map(item => <TaskCard/>)}
         </Paper>
     );
 };
