@@ -9,7 +9,7 @@ const useStyle = makeStyles({
         backgroundColor: '#F2F4F5',
         display: 'flex',
         alignItems: 'center',
-        minWidth: 250,
+        width: 250,
         minHeight: 44,
     },
     marker: {

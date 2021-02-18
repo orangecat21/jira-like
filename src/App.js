@@ -5,6 +5,8 @@ import {Grid, Paper, Container, makeStyles, Card, IconButton} from '@material-ui
 import {Add as AddIcon, FiberManualRecord} from '@material-ui/icons';
 
 import StepSectionHeader from './components/StepSection/StepSectionHeader';
+import TaskList from './components/StepSection/TaskList';
+import TaskCard from './components/StepSection/TaskList/TaskCard';
 
 
 const useStyle = makeStyles(() => ({
@@ -33,29 +35,26 @@ const App = () => {
     return (
         <Provider store={store}>
             <Container className={classes.container}>
-                <Grid container alignItems='center' justify='center' spacing={4}>
+                <Grid container alignItems='flex-start' justify='center' spacing={4}>
                     <Grid item>
-                        {/*<Paper elevation={0} className={classes.root}>*/}
-                        {/*    <FiberManualRecord className={classes.circle} />*/}
-                        {/*    /!*<div className={classes.circle}/>*!/*/}
-                        {/*    Заголовок*/}
-                        {/*    <IconButton aria-label="add task" className={classes.button}>*/}
-                        {/*        <AddIcon/>*/}
-                        {/*    </IconButton>*/}
-                        {/*</Paper>*/}
 
                         <StepSectionHeader title='Наряды' markerColor='grey' className={classes.sectionTitle}
                         addCardHandler={() => console.log('Карточка добавляется')} addButton/>
 
-                        <Paper elevation={0} className={classes.root}>
-                            <Card>SMTH</Card>
-                            <Card>SMTH</Card>
-                        </Paper>
-                        <Paper>CHECK</Paper>
+                        <TaskList>
+                            <TaskCard text='lorem10'
+                                      arrowMarker
+                                      colorMarker='orange'
+                                      commentLnegth={2}
+                                      isWarning
+                                      deadline='2021-02-19'
+                            />
+                            <TaskCard text='Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestias, quasi.'/>
+                        </TaskList>
                     </Grid>
 
                     <Grid item>
-                        <StepSectionHeader addButton title='Наряды' markerColor='grey' className={classes.sectionTitle}/>
+                        <StepSectionHeader title='В работе' markerColor='green' className={classes.sectionTitle}/>
                         <Paper elevation={0} className={classes.root}>
                             <Card>SMTH</Card>
                             <Card>SMTH</Card>
