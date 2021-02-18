@@ -10,11 +10,17 @@ const useStyle = makeStyles({
     },
 });
 
-const TaskList = ({tasks, ...props}) => {
+const TaskList = ({tasks, cardClickHandler, moveLeft, moveRight, ...props}) => {
     const classes = useStyle();
     return (
         <Paper elevation={0} classes={{root: classes.root}} {...props}>
-            {tasks && tasks.map(task => <TaskCard {...task} />)}
+            {
+                tasks && tasks.map(task => <TaskCard key={task.id}
+                                                     task={task}
+                                                     moveLeft={moveLeft}
+                                                     moveRight={moveRight}
+                                                     cardClickHandler={cardClickHandler}/>)
+            }
         </Paper>
     );
 };

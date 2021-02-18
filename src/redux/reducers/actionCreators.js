@@ -30,7 +30,7 @@ export const moveToInspectionAC = (task) => {
 
 export const moveToCompleteAC = (task) => {
     return {
-        type: actionTypes.MOVE_TASK_TO_ORDER,
+        type: actionTypes.MOVE_TASK_TO_COMPLETE,
         task
     }
 };

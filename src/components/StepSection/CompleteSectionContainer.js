@@ -4,7 +4,7 @@ import {moveToInspectionAC} from '../../redux/reducers/actionCreators';
 
 const mapStateToProps = (state) => {
     return {
-        tasks: state.inspection.tasks,
+        tasks: state.complete.tasks,
         header: 'Завершено',
         headerMarkerColor: 'blue',
     };

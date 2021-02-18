@@ -23,6 +23,7 @@ const StepSection = (
         tasks,
         moveLeft,
         moveRight,
+        cardClickHandler,
         ...props
     }) => {
 
@@ -37,7 +38,7 @@ const StepSection = (
                 className={classes.sectionTitle}
             />
 
-            <TaskList tasks={tasks}/>
+            <TaskList tasks={tasks} moveLeft={moveLeft} moveRight={moveRight} cardClickHandler={cardClickHandler}/>
         </Grid>
     );
 };
