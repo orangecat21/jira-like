@@ -56,7 +56,7 @@ const useStyle = makeStyles({
 const TaskCard = ({text, arrowMarker, colorMarker, commentLnegth, isWarning, deadline, user, ...props}) => {
     const classes = useStyle({colorMarker});
     return (
-        <Card classes={{root: classes.root, firstChild: classes.firstChild}}>
+        <Card elevation={4} classes={{root: classes.root, firstChild: classes.firstChild}}>
             <Typography gutterBottom className={classes.text}>
                 {text}
             </Typography>
