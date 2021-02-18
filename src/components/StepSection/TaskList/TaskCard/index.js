@@ -3,7 +3,6 @@ import React from 'react';
 import {makeStyles, Card, Typography, Grid} from '@material-ui/core';
 import {
     ArrowUpward as ArrowMarker,
-    ChatBubbleOutline,
     ChatBubbleOutline as CommentIcon,
     Warning as WarningIcon
 } from '@material-ui/icons';
@@ -53,19 +52,30 @@ const useStyle = makeStyles({
     }
 });
 
-const TaskCard = ({text, arrowMarker, colorMarker, commentLnegth, isWarning, deadline, user, ...props}) => {
+const TaskCard = (
+    {
+        id,
+        text,
+        arrowMarker,
+        colorMarker,
+        comment,
+        isWarning,
+        deadline,
+        author,
+        ...props
+    }) => {
     const classes = useStyle({colorMarker});
     return (
-        <Card elevation={4} classes={{root: classes.root, firstChild: classes.firstChild}}>
+        <Card elevation={4} classes={{root: classes.root, firstChild: classes.firstChild}} {...props}>
             <Typography gutterBottom className={classes.text}>
                 {text}
             </Typography>
             <Grid container alignItems='flex-end'>
                 {arrowMarker && <ArrowMarker className={clsx(classes.icon, classes.arrow)}/>}
 
-                {commentLnegth > 0 && <CommentIcon className={classes.icon}/>}
+                {comment.length > 0 && <CommentIcon className={classes.icon}/>}
 
-                {commentLnegth > 0 && <Typography className={classes.comment}>{commentLnegth}</Typography>}
+                {comment.length > 0 && <Typography className={classes.comment}>{comment.length}</Typography>}
 
                 {isWarning && <WarningIcon className={clsx(classes.icon, classes.warning)}/>}
 
@@ -75,7 +85,7 @@ const TaskCard = ({text, arrowMarker, colorMarker, commentLnegth, isWarning, dea
                     </Typography>
                 }
 
-                <img src={user?.avatar || defaultAvatar} alt='User Avatar' className={classes.avatar}/>
+                <img src={author?.avatar || defaultAvatar} alt='User Avatar' className={classes.avatar}/>
 
             </Grid>
         </Card>

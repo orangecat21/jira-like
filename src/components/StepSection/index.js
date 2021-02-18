@@ -20,19 +20,20 @@ const StepSection = (
         header,
         headerMarkerColor,
         addCardHandler,
-        addButton,
         tasks,
+        moveLeft,
+        moveRight,
         ...props
     }) => {
 
     const classes = useStyle();
     return (
-        <Grid item className={classes.root}>
+        <Grid item className={classes.root} {...props}>
             <StepSectionHeader
                 title={header}
                 markerColor={headerMarkerColor}
                 addCardHandler={addCardHandler}
-                addButton={addButton}
+                addButton={addCardHandler && true}
                 className={classes.sectionTitle}
             />
 

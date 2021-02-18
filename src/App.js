@@ -5,7 +5,10 @@ import store from './redux/reduxStore';
 
 import {Grid, Container, makeStyles} from '@material-ui/core';
 
-import StepSection from './components/StepSection';
+import OrderSectionContainer from './components/StepSection/OrderSectionContainer';
+import InWorkSectionContainer from './components/StepSection/InWorkSectionContainer';
+import InspectionSectionContainer from './components/StepSection/InspectionSectionContainer';
+import CompleteSectionContainer from './components/StepSection/CompleteSectionContainer';
 
 
 const useStyle = makeStyles(() => ({
@@ -22,11 +25,11 @@ const App = () => {
     return (
         <Provider store={store}>
             <Container className={classes.container}>
-                <Grid container wrap alignItems='flex-start' justify='center' spacing={4} className={classes.gridContainer}>
-                    <StepSection/>
-                    <StepSection/>
-                    <StepSection/>
-                    <StepSection/>
+                <Grid container wrap='wrap' alignItems='flex-start' justify='center' spacing={4} className={classes.gridContainer}>
+                    <OrderSectionContainer/>
+                    <InWorkSectionContainer/>
+                    <InspectionSectionContainer/>
+                    <CompleteSectionContainer/>
                 </Grid>
             </Container>
         </Provider>

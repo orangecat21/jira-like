@@ -3,10 +3,25 @@ import actionTypes from '../actionTypes';
 const initialState = {
     tasks: [
         {
+            id: 5,
             text: 'Установка плит под фундамент',
+            arrowMarker: true,
+            colorMarker: 'orange',
+            // Условный массив коментов
+            comment: [1,2,3],
+            isWarning: true,
+            deadline: '2021-03-01',
+            author: {},
         },
         {
-            text: 'Земельные работы по подготовке площадки',
+            id: 6,
+            text: 'Земельные работы по подготовке площадки по установке плит для несущей стены',
+            arrowMarker: true,
+            colorMarker: '#74CE98',
+            comment: [1,2],
+            isWarning: false,
+            deadline: '2021-02-23',
+            author: {},
         },
     ],
 };

@@ -14,7 +14,7 @@ const TaskList = ({tasks, ...props}) => {
     const classes = useStyle();
     return (
         <Paper elevation={0} classes={{root: classes.root}} {...props}>
-            {tasks && tasks.map(item => <TaskCard/>)}
+            {tasks && tasks.map(task => <TaskCard {...task} />)}
         </Paper>
     );
 };
