@@ -8,6 +8,7 @@ import {
 } from '@material-ui/icons';
 import clsx from 'clsx';
 import Draggable from 'react-draggable';
+import './dragable.css';
 
 
 import defaultAvatar from '../../../../assets/img/defaultAvatar.jpg'
@@ -88,7 +89,7 @@ const TaskCard = (
 
 
     return (
-        <Draggable axis='x' onStop={stopDragHandler} onDrag={() => {
+        <Draggable axis='both' onStop={stopDragHandler} onDrag={() => {
         }} onStart={startDragHandler} position={{x: 0, y: 0}}>
             <Card elevation={4} classes={{root: classes.root, firstChild: classes.firstChild}} {...props}>
                 <CardActionArea onClick={clickHandler} className={classes.actionArea}>
